@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const catSchema = new Schema({
-    name: String,
+    name: { type: String, required: true, },
     age: Number
 });
 
 mongoose
 .connect('mongodb://localhost:27017/animals', { useNewUrlParser: true })
 .then(() => {
-    console.log('Database is online! and I am trying to config GitHub bas')
+    console.log('Database is online!')
 });
 
