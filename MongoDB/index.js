@@ -15,7 +15,7 @@ mongoose
     console.log('Database is online!')
 
     Cat.find().then(cats => console.log(cats))
-    // if left it like that every time I refresh it will create obj Molly again (1,2,3...)
+    // if left it like that every time I refresh it will create obj Lilly again (1,2,3...)
     
     //  Cat
     //.create({
