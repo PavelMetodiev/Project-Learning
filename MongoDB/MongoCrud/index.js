@@ -56,3 +56,18 @@ const studentSchema = new Schema({
     averageGrade: Number
 })
 
+const Student = mongoose.model('Student', studentSchema)
+
+mongoose
+    .connect('mongodb://localhost:27017/students')
+    .then(() => {
+        console.log('Database is now connected')
+
+        Student
+            .create({
+                firstName: 'Penelope',
+                lastName: 'Cruse',
+                averageGrade: 5.4
+            })
+            .then(student => console.log(student))
+    })
