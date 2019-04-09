@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
 
-const catSchema = new Schema({
+
+/* const catSchema = new Schema({
     name: { type: String, required: true },
     age: Number
 });
@@ -32,11 +33,26 @@ mongoose
     //.catch(err => console.log(err))
 
     Cat
+    //.deleteMany({name: 'Molly'})
+    //.deleteOne({name: 'Molly'})
     .find()
+    // .findOne({name: 'Molly'}) // finds the first Obj with this req
+    //.where('age').gt(10)
+    // .findByIdAndUpdate("5ca3710381f7a63220b5e7f8", {age: 43})
+    //.sort('-age') // sort in opposite direction from bigger to smeller
+    // .select('')
+    //. findById('')
+    
     .then(cats => {
         for (let cat of cats) {
-            console.log(cat.name)
+            console.log(cat.age)
         }
     })
-});
+}); */
+
+const studentSchema = new Schema({
+    firstName: {type: String, required: true},
+    lastName: {type: String, required: true},
+    averageGrade: Number
+})
 
