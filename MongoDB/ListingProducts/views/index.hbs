@@ -9,6 +9,15 @@
     </tr>
   </thead>
   <tbody>
-    
+    {{#each products}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.price}}</td>
+        <td>
+          <a href="/edit/{{this.id}}"><button type="button" class="btn btn-primary">Edit</button></a>
+          <a href="/delete/{{this.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
+        </td>
+      </tr>
+      {{/each}}
   </tbody>
 </table>
