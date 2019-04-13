@@ -1,9 +1,11 @@
+const Product = require('../models/Product')
+
 module.exports = {
   getIndex: function (req, res) {
-    //TODO
+    return res.render('index');
   },
   getCreate: function (req, res) {
-    //TODO
+    
   },
   postCreate: function (req, res) {
     //TODO
