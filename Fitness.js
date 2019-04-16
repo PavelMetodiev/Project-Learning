@@ -1,75 +1,52 @@
 function solve(day, activity, hour) {
     var price = 0;
-    var mPrice =0;
-    
+       
   if (day === 'Monday' || day === 'Tuesday' || day === 'Wednesday' || day === 'Thursday' || day === 'Friday') {
-   
   	switch (activity) { 
-     
-    	case 'Fitness':
+      	case 'Fitness':
     		if (hour >= 8 && hour <= 15) {
-    			mPrice = 5;
-   				price = mPrice.toFixed(2)
-    			console.log(price)
-    			
+    	        price = 5;
+    			console.log(price.toFixed(2));
             } else {
-    			mPrice = 7.5;
-   				price = mPrice.toFixed(2)
-    			console.log(price)
-    			
+   				price = 7.5;
+    			console.log(price.toFixed(2));
             }
-    return;
+        return;
   		case 'Sauna':
     		if (hour >= 8 && hour <= 15) {
-    			mPrice = 4;
-   				price = mPrice.toFixed(2)
-    			console.log(price)
-    			
+   				price = 4;
+    			console.log(price.toFixed(2))
             } else {
-    			mPrice = 6.5;
-   				price = mPrice.toFixed(2)
-    			console.log(price)
-    			
+   				price = 6.5;
+    			console.log(price.toFixed(2))
             }
-    return;
+        return;
   		case 'Instructor':
     		if (hour >= 8 && hour <= 15) {
-    			mPrice = 10;
-   				price = mPrice.toFixed(2)
-    			console.log(price)
-    			
-             } else {
-    			mPrice = 12.5;
-   				price = mPrice.toFixed(2)
-    			console.log(price)
-    			
-             }	
-     return;
+   				price = 10;
+    			console.log(price.toFixed(2))
+            } else {
+   				price = 12.5;
+    			console.log(price.toFixed(2))
+            }	
+        return;
      }
-   } else {
-   
+  } else {
  	switch (activity) { 
-     
     	case 'Fitness':
-    			
    				price = 8
     			console.log(price.toFixed(2))
-    			return;
-    
+    	return;
   		case 'Sauna':
-    		
    				price = 7
     			console.log(price.toFixed(2))
-    			return;
-        
+    	return;
   		case 'Instructor':
     			price = 15
     			console.log(price.toFixed(2))
-    			return;
-           
-   
-  	  }    
- }  
+    	return;
+  	}    
+  }  
 }    
-     
+  
      solve('kkk', 'Sauna', 16)
