@@ -33,4 +33,4 @@ function solve(steps, fPmeters, kmH) {
     } 
 }   
      
-solve(70000, 0.6, 5) 
+solve(70031, 0.6, 5) 
