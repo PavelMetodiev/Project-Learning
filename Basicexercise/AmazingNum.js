@@ -6,9 +6,10 @@ function solve(num) {
        	sum += +numString[i];
     }
     
-    sum % 9 === 0 ? numString += ' Amazing? True' : numString += ' Amazing? False';
+    sum.toString().includes(9) ? numString += ' Amazing? True' : numString += ' Amazing? False';
     
     console.log(numString)
+    
 }   
     
-solve(10351);  
+solve(1037979845123); 
