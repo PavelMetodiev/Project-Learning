@@ -4,14 +4,9 @@ function oddEvenSum (input) {
    let stringInput = input.toString() 
     
    for (let i = 0; i < stringInput.length; i++) { 
-   		
-   		if (+stringInput[i] % 2 == 0) {
-   			evenSum += +stringInput[i]
-        } else {
-   			oddSum += +stringInput[i]
-        }
-   		
+   		+stringInput[i] % 2 == 0 ? evenSum += +stringInput[i] : oddSum += +stringInput[i];
    }
+   
    console.log(`Odd sum = ${oddSum}, Even sum = ${evenSum}`)
 }   
     
