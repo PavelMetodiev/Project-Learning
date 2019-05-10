@@ -12,26 +12,22 @@ function schoolGrades(arr) {
     		map.set(name, map.get(name).concat(grades))
         } else {
     		map.set(name, map.get(name).concat(grades))
-    		
-        }
+    	}
     }
     function average(a, b) {
     	let aSum = 0 
     	for(let i = 0; i < a[1].length; i++) {
     		aSum += a[1][i]
-    	}	
-        
+    	}
     	let bSum = 0
     	for (let i = 0; i < b[1].length; i++) {
     		bSum += b[1][i]
         }
-    	
-    	let aAverage = aSum / a[1].length
+        let aAverage = aSum / a[1].length
     	let bAverage = bSum / b[1].length	
     	return aAverage - bAverage
     }
     let sorted = [...map].sort((a, b) => average(a, b))
-    
     
     for (let [key, value] of sorted) {
     	console.log(`${key}: ${value.join(', ')}`)
