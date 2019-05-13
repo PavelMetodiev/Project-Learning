@@ -1,27 +1,32 @@
 function peopleToNeighborhoods(arr) {
-    
-    let arrHood = arr[0].split(`,`)
-   	
-    let map = new Map()
-    for (let string of arrHood) {
-    	
-    		map.set(string, [])
-   	
-   		for (let i = 1; i < arr.length; i++)
-    	let current = arr[i].split('-')
-    	let string = current[0]
+	
+	let map = new Map()
+    let arrHood = arr[0].split(`, `)
+
+    for (let neighborhood of arrHood) {
+    	map.set(neighborhood, [])
+    }
+   	for (let i = 1; i < arr.length; i++) {
+    	let current = arr[i].split(' - ')
+    	var neighborhood = current[0]
     	let person = current[1]
-   		if (arrHood.icludes(string)) {
-   			map.get(string).push(person)
+   		if (arrHood.includes(neighborhood)) {
+   			map.get(neighborhood).push(`--${person}`) 
         }
 	}
-   	for (let [key, value] of map) {
-    	console.log(`${key}: ${value}`)
+	let sorted = [...map].sort((a, b) => b[1].length - a[1].length)
+	
+   	for (let [key, value] of sorted) {
+		var count = map.get(key).length
+		if (count == 0){
+			console.log(`${key}: ${count}`)
+        } else {
+    		console.log(`${key}: ${count}`)
+			console.log(`${value.join('\n')}`)
+        }
     }
 }
-    
 
-   
 peopleToNeighborhoods(['Abbey Street, Herald Street, Bright Mews',
 'Bright Mews - Garry',
 'Bright Mews - Andrea',
