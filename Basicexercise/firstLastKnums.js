@@ -9,3 +9,4 @@ function firstLastKnums(arr) {
 }    
     
 firstLastKnums([3, 6, 7, 8, 9]) 
+

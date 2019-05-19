@@ -19,4 +19,4 @@ function wordOccurrences(arr) {
     	console.log(`${key} -> ${value} times`)
     }
 }      
-wordOccurrences(["Here", "is", "the", "first", "sentence", "Here", "is", "another", "sentence", "And", "finally", "the", "third", "sentence"])
+wordOccurrences(["Here", "is", "maybe", "the", "first", "sentence", "Here", "is", "another", "sentence", "And", "finally", "the", "third", "sentence"])
