@@ -1,15 +1,24 @@
 let segment
 let color
 let snake
+let snakeController
+let food = []
 
 function setup() {
     createCanvas(600, 600);
-    segment = new Segment(width / 2, height / 2, 20)
-    color = createVector(random(255), random(255), random(255))
-    snake = new Snake()
+    snakeController = new Controller()
+    snake = new Snake(snakeController, width / 2, height / 2)
+    for (let i = 0; i < 10; i++){
+        let x = random(0, width)
+        let y = random(0, height)
+        food.push(new Food(x, y))
+    }
 }
 function draw() {
     background(0);
-    segment.calculateEnd()
-    segment.display(color)
+    snake.update()
+    snake.display()
+    for (let piece of food){
+        piece.display()
+    }
 }

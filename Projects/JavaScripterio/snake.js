@@ -3,6 +3,7 @@ class Snake {
         this.controller = controller
         this.thickness = random(10, 20)
         this.head = new Segment(x, y, this.thickness)
+        this.len = 10
         this.body = []
         this.color = createVector(random(255), random(255), random(255))
         this.buildSnake()
@@ -10,7 +11,7 @@ class Snake {
 
     buildSnake() {
         let prev = this.head
-        for (let i = 0; i < this.buildSnake; i++){
+        for (let i = 0; i < this.len; i++){
             let current = new Segment(prev.end.x, prev.end.y, this.thickness)
             this.body.push(current)
             prev = current
@@ -20,7 +21,17 @@ class Snake {
     display() {
         this.head.display(this.color)
         for (let part of this.body) {
-            part.display(color)
+            part.display(this.color)
+        }
+    }
+
+    update() {
+        this.controller.update()
+        this.head.follow(this.controller.pos.x, this.controller.pos.y)
+        let prev = this.head
+        for (let part of this.body) {
+            part.follow(prev.start.x, prev.start.y)
+            prev = part
         }
     }
 }
