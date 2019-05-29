@@ -34,4 +34,17 @@ class Snake {
             prev = part
         }
     }
+
+    eats(food) {
+        let dist = p5.Vectore.dist(this.head, food.pos)
+        if (dist < this.head.thickness / 2) {
+            return true 
+        } else {
+            return false
+        }
+    }
+
+    grow(food) {
+        this.thickness
+    }
 }

@@ -18,7 +18,12 @@ function draw() {
     background(0);
     snake.update()
     snake.display()
-    for (let piece of food){
+    for (let i = food.length - 1; i >= 0; i--){
+        let piece = food[i]
         piece.display()
+        if (snake.eats(piece)) {
+            snake.grow(piece)
+            food.splice(i, 1)
+        }
     }
 }
