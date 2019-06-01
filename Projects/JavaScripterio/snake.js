@@ -23,6 +23,7 @@ class Snake {
         for (let part of this.body) {
             part.display(this.color)
         }
+        this.head.drawEye()
     }
 
     update() {
@@ -36,7 +37,7 @@ class Snake {
     }
 
     eats(food) {
-        let dist = p5.Vectore.dist(this.head, food.pos)
+        let dist = p5.Vector.dist(this.head.end, food.pos)
         if (dist < this.head.thickness / 2) {
             return true 
         } else {
@@ -45,6 +46,13 @@ class Snake {
     }
 
     grow(food) {
-        this.thickness
+        this.head.thickness += food.radius / 8
+        for (let part of this.body) {
+            part.thickness += food.radius / 8
+            
+        } 
+        let tail = this.body[this.body.length - 1]
+        let newSegment = new Segment(tail.end.x, tail.end.y, tail.thickness )
+        this.body.push(newSegment)
     }
 }

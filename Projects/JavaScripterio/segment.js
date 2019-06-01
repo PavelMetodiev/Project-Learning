@@ -29,4 +29,13 @@ class Segment {
         this.start = newPos
         this.calculateEnd()
     }
+
+    drawEye () {
+        stroke(255)
+        strokeWeight(this.thickness / 2)
+        point(this.end.x, this.end.y)
+        stroke(0)
+        strokeWeight(this.thickness / 4)
+        point(this.end.x, this.end.y)
+    }
 }
