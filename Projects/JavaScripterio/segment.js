@@ -32,10 +32,17 @@ class Segment {
 
     drawEye () {
         stroke(255)
-        strokeWeight(this.thickness / 2)
-        point(this.end.x, this.end.y)
+        strokeWeight(this.thickness / 2.2)
+        point(this.end.x * 1.0097, this.end.y * 1.0097)
         stroke(0)
-        strokeWeight(this.thickness / 4)
-        point(this.end.x, this.end.y)
+        strokeWeight(this.thickness / 5)
+        point(this.end.x * 1.0097, this.end.y * 1.0097)
+
+        stroke(255)
+        strokeWeight(this.thickness / 2.2)
+        point(this.end.x / 1.0097, this.end.y / 1.0097)
+        stroke(0)
+        strokeWeight(this.thickness / 5)
+        point(this.end.x / 1.0097, this.end.y / 1.0097)
     }
 }

@@ -5,10 +5,10 @@ class Snake {
         this.head = new Segment(x, y, this.thickness)
         this.len = 10
         this.body = []
-        this.color = createVector(random(255), random(255), random(255))
+        this.color = new Food(x, y)
         this.buildSnake()
     }
-
+   
     buildSnake() {
         let prev = this.head
         for (let i = 0; i < this.len; i++){
@@ -16,9 +16,11 @@ class Snake {
             this.body.push(current)
             prev = current
         }
+        
     }
 
     display() {
+        
         this.head.display(this.color)
         for (let part of this.body) {
             part.display(this.color)
@@ -28,7 +30,7 @@ class Snake {
 
     update() {
         this.controller.update()
-        this.head.follow(this.controller.pos.x, this.controller.pos.y)
+        this.head.follow(this.controller.pos.x + 10, this.controller.pos.y + 10)
         let prev = this.head
         for (let part of this.body) {
             part.follow(prev.start.x, prev.start.y)
@@ -39,20 +41,22 @@ class Snake {
     eats(food) {
         let dist = p5.Vector.dist(this.head.end, food.pos)
         if (dist < this.head.thickness / 2) {
-            return true 
+            return true
         } else {
             return false
         }
+        
     }
 
     grow(food) {
         this.head.thickness += food.radius / 8
         for (let part of this.body) {
             part.thickness += food.radius / 8
-            
         } 
+        this.color = food.color
         let tail = this.body[this.body.length - 1]
         let newSegment = new Segment(tail.end.x, tail.end.y, tail.thickness )
         this.body.push(newSegment)
     }
+
 }
