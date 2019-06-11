@@ -58,5 +58,5 @@ class Snake {
         let newSegment = new Segment(tail.end.x, tail.end.y, tail.thickness )
         this.body.push(newSegment)
     }
-
+    
 }

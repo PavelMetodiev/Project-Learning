@@ -28,7 +28,17 @@ function draw() {
             food.splice(i, 1)
         }
     }
+    if (mouseIsPressed) {
+        if (snake.head.thickness > 10){
+            snake.controller.update(5)
+            snake.head.thickness -= 0.1
+            for (let part of snake.body) {
+                part.thickness -= 0.1
+            }
+        }
+    } 
 }
+
 function translation() {
     translate(width / 2, height /2)
     let newZoom = 16 / snake.head.thickness

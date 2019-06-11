@@ -5,9 +5,14 @@ class Controller {
         this.dir = createVector(random(width), random(height))
     }
 
-    update() {
+    update(mag) {
         let dir = createVector(mouseX - width / 2, mouseY - height / 2) 
-        dir.setMag(0.8)
+        if (mag) {
+            dir.setMag(mag)
+        } else {
+            dir.setMag(0.8)
+        }
+        
         this.vel.lerp(dir, 0.2)
         this.pos.add(this.vel)
     }
