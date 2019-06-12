@@ -1,3 +1,4 @@
+/*eslint-disable semi, no-unused-vars, no-undef*/
 let segment
 let color
 let snake
