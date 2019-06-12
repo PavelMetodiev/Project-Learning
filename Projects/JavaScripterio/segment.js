@@ -1,3 +1,5 @@
+/*globals createVector strokeWeight*/
+/*eslint-disable no-undef */
 class Segment {
     constructor(x, y, thickness) {
         this.start = createVector(x, y);
@@ -34,16 +36,16 @@ class Segment {
     drawEye () {
         stroke(255)
         strokeWeight(this.thickness / 2.2)
-        point(this.end.x + snake.head.thickness / 5, this.end.y + snake.head.thickness / 5)
+        point(this.end.x + snake.head.thickness / 7, this.end.y + snake.head.thickness / 7)
         stroke(0)
         strokeWeight(this.thickness / 5)
-        point(this.end.x + snake.head.thickness / 5, this.end.y + snake.head.thickness / 5)
+        point(this.end.x + snake.head.thickness / 7, this.end.y + snake.head.thickness / 7)
 
         stroke(255)
         strokeWeight(this.thickness / 2.2)
-        point(this.end.x - snake.head.thickness / 5, this.end.y - snake.head.thickness / 5)
+        point(this.end.x - snake.head.thickness / 7, this.end.y - snake.head.thickness / 7)
         stroke(0)
         strokeWeight(this.thickness / 5)
-        point(this.end.x - snake.head.thickness / 5, this.end.y - snake.head.thickness / 5)
+        point(this.end.x - snake.head.thickness / 7, this.end.y - snake.head.thickness / 7)
     }
 }
