@@ -32,7 +32,7 @@ class Segment {
         this.start = newPos
         this.calculateEnd()
     }
-
+//KOlkoLeda
     drawEye () {
         stroke(255)
         strokeWeight(this.thickness / 2.2)
