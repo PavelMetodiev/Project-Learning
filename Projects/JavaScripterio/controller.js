@@ -1,6 +1,6 @@
 class Controller {
-    constructor() {
-        this.pos = createVector(width / 2, height / 2)
+    constructor(x, y) {
+        this.pos = createVector(x, y)
         this.vel = createVector(0, 0)
         this.dir = createVector(random(width), random(height))
     }
