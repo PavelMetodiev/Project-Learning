@@ -36,16 +36,16 @@ class Segment {
     drawEye () {
         stroke(255)
         strokeWeight(this.thickness / 2.2)
-        point(this.end.x + snake.head.thickness / 5, this.end.y + snake.head.thickness / 7)
+        point(this.end.x + snake.head.thickness / , this.end.y + snake.head.thickness / )
         stroke(0)
         strokeWeight(this.thickness / 5)
-        point(this.end.x + snake.head.thickness / 5, this.end.y + snake.head.thickness / 5)
+        point(this.end.x + snake.head.thickness / , this.end.y + snake.head.thickness / )
 
         stroke(255)
         strokeWeight(this.thickness / 2.2)
-        point(this.end.x - snake.head.thickness / 5, this.end.y - snake.head.thickness / 5)
+        point(this.end.x - snake.head.thickness / , this.end.y - snake.head.thickness / )
         stroke(0)
         strokeWeight(this.thickness / 5)
-        point(this.end.x - snake.head.thickness / 5, this.end.y - snake.head.thickness / 5)
+        point(this.end.x - snake.head.thickness / , this.end.y - snake.head.thickness / )
     }
 }
