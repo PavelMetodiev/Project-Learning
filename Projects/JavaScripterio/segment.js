@@ -1,5 +1,5 @@
 /*globals createVector strokeWeight*/
-/*eslint-disable no-undef */
+/*eslint-disable no-undef, semi*/
 class Segment {
     constructor(x, y, thickness) {
         this.start = createVector(x, y);
