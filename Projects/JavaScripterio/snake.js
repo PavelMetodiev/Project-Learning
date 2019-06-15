@@ -28,8 +28,8 @@ class Snake {
         this.head.drawEye()
     }
 
-    update() {
-        this.controller.update()
+    update(isPlayer) {
+        this.controller.update(isPlayer)
         this.head.follow(this.controller.pos.x + 10, this.controller.pos.y + 10)
         let prev = this.head
         for (let part of this.body) {
@@ -58,5 +58,15 @@ class Snake {
         let newSegment = new Segment(tail.end.x, tail.end.y, tail.thickness )
         this.body.push(newSegment)
     }
-    
+    kills(snake) {
+        
+            for (let segment of this.body) {
+                let dist = p5.Vector.dist(snake.head.start, segment.start)
+                if (dist < this.head.thickness) {
+                    return true
+                }
+            }
+            return false
+        
+    }
 }   

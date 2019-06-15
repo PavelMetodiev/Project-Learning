@@ -6,12 +6,20 @@ let snakeController
 let food = []
 let zoom = 0
 let enemies = []
+let gameHasStarted = false
+let startButton
 
 function setup() {
     createCanvas(600, 600);
+    startButton = createButton("Start")
+    startButton.position(width / 2, height / 2)
+    startButton.mousePressed(() => {
+        gameHasStarted = true
+        startButton.remove()
+    })
     snakeController = new Controller(width / 2, height / 2)
     snake = new Snake(snakeController, width / 2, height / 2)
-    for (let i = 0; i < 50; i++){
+    for (let i = 0; i < 50; i++) {
         let x = random(0, width)
         let y = random(0, height)
         food.push(new Food(x, y))
@@ -23,37 +31,60 @@ function setup() {
     }
 }
 function draw() {
-    background(0);
-    translation()
-    snake.update(true)
-    snake.display()
-    for (let i = food.length - 1; i >= 0; i--){
-        let piece = food[i]
-        piece.display()
-        if (snake.eats(piece)) {
-            snake.grow(piece)
-            food.splice(i, 1)
-            let x = random(width)
-            let y = random(height)
-            food.push(new Food(x, y))
-        }
-    }
-    for (let enemy of enemies) {
-        enemy.update(false)
-        enemy.display()
-    }
-    if (mouseIsPressed) {
-        if (snake.head.thickness > 10){
-            snake.controller.update(5)
-            snake.head.thickness -= 0.1
-            for (let part of snake.body) {
-                part.thickness -= 0.1
-            }
-            if (random(1) < 0.1) {
-                snake.body.splice(snake.body.length - 1, 1)
+    if (gameHasStarted) {
+        background(0);
+        translation()
+        snake.update(true)
+        snake.display()
+        for (let i = food.length - 1; i >= 0; i--) {
+            let piece = food[i]
+            piece.display()
+            if (snake.eats(piece)) {
+                snake.grow(piece)
+                food.splice(i, 1)
+                let x = random(width)
+                let y = random(height)
+                food.push(new Food(x, y))
             }
         }
-    } 
+        for (let i = enemies.length - 1; i >= 0; i--) {
+            let enemy = enemies[i]
+            if (snake.kills(enemy)) {
+                for (let segment of enemy.body) {
+                    let foodPiece = new Food(segment.end.x, segment.end.y)
+                    food.push(foodPiece)
+                }
+                enemies.splice(i, 1)
+            } else if (enemy.kills(snake)) {
+                gameHasStarted = false
+                startButton = createButton("Start")
+                startButton.position(width / 2, height / 2)
+                startButton.mousePressed(() => {
+                    gameHasStarted = true
+                    startButton.remove()
+                })
+                restartGame()
+            }
+            enemy.update(false)
+            enemy.display()
+        }
+        if (mouseIsPressed) {
+            if (snake.head.thickness > 10) {
+                snake.controller.update(true, 5)
+                snake.head.thickness -= 0.1
+                for (let part of snake.body) {
+                    part.thickness -= 0.1
+                }
+                if (random(1) < 0.1) {
+                    snake.body.splice(snake.body.length - 1, 1)
+                }
+            }
+        }
+    } else {
+        background(150)
+
+    }
+
 }
 
 function translation() {
@@ -62,4 +93,19 @@ function translation() {
     zoom = lerp(zoom, newZoom, 0.008)
     scale(zoom)
     translate(-snake.head.end.x, -snake.head.end.y)
+}
+
+function restartGame() {
+    snakeController = new Controller(width / 2, height / 2)
+    snake = new Snake(snakeController, width / 2, height / 2)
+    for (let i = 0; i < 50; i++) {
+        let x = random(0, width)
+        let y = random(0, height)
+        food.push(new Food(x, y))
+    }
+    for (let i = 0; i < 10; i++) {
+        enemyController = new Controller(random(width), random(height))
+        enemy = new Snake(enemyController, enemyController.pos.x, enemyController.pos.y)
+        enemies.push(enemy)
+    }
 }
