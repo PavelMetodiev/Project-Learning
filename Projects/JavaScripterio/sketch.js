@@ -25,7 +25,7 @@ function setup() {
 function draw() {
     background(0);
     translation()
-    snake.update()
+    snake.update(true)
     snake.display()
     for (let i = food.length - 1; i >= 0; i--){
         let piece = food[i]
@@ -38,7 +38,10 @@ function draw() {
             food.push(new Food(x, y))
         }
     }
-    for (let enemy of enemies)
+    for (let enemy of enemies) {
+        enemy.update(false)
+        enemy.display()
+    }
     if (mouseIsPressed) {
         if (snake.head.thickness > 10){
             snake.controller.update(5)

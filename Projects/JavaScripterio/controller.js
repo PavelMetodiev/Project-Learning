@@ -5,9 +5,17 @@ class Controller {
         this.dir = createVector(random(width), random(height))
     }
 
-    update(mag) {
-        let dir = createVector(mouseX - width / 2, mouseY - height / 2) 
-        if (mag) {
+    update(isPlayer, mag) {
+        let dir
+        if (isPlayer) {
+            let dir = createVector(mouseX - width / 2, mouseY - height / 2) 
+        } else {
+            if (random(1) < 0.1) {
+                this.dir = createVector(random(width), random(height))
+            }
+            dir = this.dir
+        }
+        if (isPlayer && mag) {
             dir.setMag(mag)
         } else {
             dir.setMag(0.8)

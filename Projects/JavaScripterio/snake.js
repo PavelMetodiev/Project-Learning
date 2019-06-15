@@ -59,4 +59,4 @@ class Snake {
         this.body.push(newSegment)
     }
     
-}
+}   
