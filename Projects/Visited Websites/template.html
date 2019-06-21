@@ -9,53 +9,53 @@
 
 <body>
 
-<div class="wrapper tabled">
-    <div class="stage" id="page1">
-        <div class="middled">
-            <div class="link-1">
-                <a href="#">
-                    <span class="thin">Soft</span><span class="thick">Uni</span>
-                </a>
-                <p>visited 1 times</p>
-            </div>
-            <div class="link-1">
-                <a href="#">
-                    <span class="thin"></span><span class="thick">Google</span>
-                </a>
-                <p>visited 2 times</p>
-            </div>
-            <div class="link-1">
-                <a href="#">
-                    <span class="thin">You</span><span class="thick">Tube</span>
-                </a>
-                <p>visited 4 times</p>
-            </div>
-            <div class="link-1">
-                <a href="#">
-                    <span class="thick">Wiki</span><span class="thin">pedia</span>
-                </a>
-                <p>visited 4 times</p>
-            </div>
+    <div class="wrapper tabled">
+        <div class="stage" id="page1">
+            <div class="middled">
+                <div class="link-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://softuni.bg/" onclick="onClicking" id="divOne">
+                        <span class="thin">Soft</span><span class="thick">Uni</span>
+                    </a>
+                    <p id="timesClickOne"></p>
+                </div>
+                <div class="link-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://translate.google.bg/?hl=bg&tab=TT0" onclick="onClicking" id="divTwo">
+                        <span class="thin"></span><span class="thick">Google</span>
+                    </a>
+                    <p id="timesClickTwo"></p>
+                </div>
+                <div class="link-1">
+                    <a target="_blank" rel="noopener noreferrer" href="#" onclick="onClicking" id="divThree">
+                        <span class="thin">You</span><span class="thick">Tube</span>
+                    </a>
+                    <p id="timesClickThree"></p>
+                </div>
+                <div class="link-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.wikipedia.org/" onclick="onClicking" id="divFour">
+                        <span class="thick">Wiki</span><span class="thin">pedia</span>
+                    </a>
+                    <p id="timesClickFour"></p>
+                </div>
 
-            <div class="link-1">
-                <a href="#">
-                    <span class="thick">G</span><span class="thin">mail</span>
-                </a>
-                <p>visited 7 times</p>
-            </div>
+                <div class="link-1">
+                    <a target="_blank" rel="noopener noreferrer" href="#" onclick="onClicking" id="divFive">
+                        <span class="thick">G</span><span class="thin">mail</span>
+                    </a>
+                    <p id="timesClickFive"></p>
+                </div>
 
-            <div class="link-1">
-                <a href="#">
-                    <span class="thick">stack</span><span class="thin">overflow</span>
-                </a>
-                <p>visited 6 times</p>
+                <div class="link-1">
+                    <a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/" onclick="onClicking" id="divSix">
+                        <span class="thick">stack</span><span class="thin">overflow</span>
+                    </a>
+                    <p id="timesClickSix"></p>
+                </div>
             </div>
         </div>
+        <script>
+            solve();
+        </script>
     </div>
-<script>
-    solve();
-</script>
-</div>
 </body>
 
 </html>
