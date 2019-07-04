@@ -11,7 +11,7 @@
     <div id="quizzie">
         <h1>JavaScript Quiz</h1>
 
-        <section>
+        <section id="q1">
             <ul class="quiz-step step1 current">
                 <li class="question">
                     <div class="question-wrap">
@@ -20,7 +20,7 @@
                 </li>
                 <li class="quiz-answer low-value" data-quizIndex="2">
                     <div class="answer-wrap">
-                        <p class="answer-text">onclick</p>
+                        <p class="answer-text" id="correct1" onclick="correctAnswer">onclick</p>
                     </div>
                 </li>
                 <li class="quiz-answer high-value" data-quizIndex="4">
@@ -30,7 +30,7 @@
                 </li>
             </ul>
         </section>
-        <section class="hidden">
+        <section class="hidden" id="q2">
             <ul class="quiz-step step1 current">
                 <li class="question">
                     <div class="question-wrap">
@@ -39,17 +39,17 @@
                 </li>
                 <li class="quiz-answer low-value" data-quizIndex="2">
                     <div class="answer-wrap">
-                        <p class="answer-text">JSON.toString()</p>
+                        <p class="answer-text" >JSON.toString()</p>
                     </div>
                 </li>
                 <li class="quiz-answer high-value" data-quizIndex="4">
                     <div class="answer-wrap">
-                        <p class="answer-text">JSON.stringify()</p>
+                        <p class="answer-text" id="correct2" onclick="correctAnswer">JSON.stringify()</p>
                     </div>
                 </li>
             </ul>
         </section>
-        <section class="hidden">
+        <section class="hidden" id="q3">
             <ul class="quiz-step step1 current">
                 <li class="question">
                     <div class="question-wrap">
@@ -58,7 +58,7 @@
                 </li>
                 <li class="quiz-answer low-value" data-quizIndex="2">
                     <div class="answer-wrap">
-                        <p class="answer-text">A programming API for HTML and XML documents</p>
+                        <p class="answer-text" id="correct3" onclick="correctAnswer">A programming API for HTML and XML documents</p>
                     </div>
                 </li>
                 <li class="quiz-answer high-value" data-quizIndex="4">
