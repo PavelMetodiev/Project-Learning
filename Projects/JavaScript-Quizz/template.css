@@ -65,6 +65,9 @@ h1, h2, p {
 #quizzie ul li.quiz-answer {
   cursor: pointer;
 }
+.result {
+  margin-top: 19%;
+}
 #quizzie ul li.question, #quizzie ul li.results-inner {
   display: block;
   float: none;
