@@ -25,7 +25,7 @@
                 </li>
                 <li class="quiz-answer high-value" data-quizIndex="4">
                     <div class="answer-wrap">
-                        <p class="answer-text">onmouseclick</p>
+                        <p class="answer-text" id="wrong1" onclick="wrongAnswer">onmouseclick</p>
                     </div>
                 </li>
             </ul>
@@ -39,7 +39,7 @@
                 </li>
                 <li class="quiz-answer low-value" data-quizIndex="2">
                     <div class="answer-wrap">
-                        <p class="answer-text" >JSON.toString()</p>
+                        <p class="answer-text" id="wrong2" onclick="wrongAnswer">JSON.toString()</p>
                     </div>
                 </li>
                 <li class="quiz-answer high-value" data-quizIndex="4">
@@ -58,21 +58,20 @@
                 </li>
                 <li class="quiz-answer low-value" data-quizIndex="2">
                     <div class="answer-wrap">
-                        <p class="answer-text" id="correct3" onclick="correctAnswer">A programming API for HTML and XML documents</p>
+                        <p class="answer-text" id="correct3" onclick="correctAnswer">A programming API for HTML and XML
+                            documents</p>
                     </div>
                 </li>
                 <li class="quiz-answer high-value" data-quizIndex="4">
                     <div class="answer-wrap">
-                        <p class="answer-text">The DOM is your source HTML</p>
+                        <p class="answer-text" id="wrong3" onclick="wrongAnswer">The DOM is your source HTML</p>
                     </div>
                 </li>
             </ul>
         </section>
-        <ul id="results">
-            <li class="results-inner">
-                <h1></h1>
-            </li>
-        </ul>
+        <section class="hidden" id="champ">
+            <h1>You are recognized as top JavaScript fan!</h1>
+        </section>
     </div>
     </main>
     </div>
