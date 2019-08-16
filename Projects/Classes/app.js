@@ -87,8 +87,7 @@ function tikets(ticketArray, sortingCriteria) {
 
     for (let ticket of ticketArray) {
         let [destination, price, status] = ticket.split('|')
-        price = +price
-
+    
         unsortedTickets.push(new Ticket(destination, price, status))
     }
 
