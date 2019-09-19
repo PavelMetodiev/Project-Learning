@@ -1,19 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div class="container">
-    <header>&#9993; Contact Book</header>
-    <div id="book">
-        <div id="list">
-            <h1>Contacts</h1>
-            <div class="content">
-                <div class="contact" data-id="id">
-                    <span class="avatar small">&#9787;</span>
-                    <span class="title">Ivan Ivanov</span>
-                </div>
+    
+               
 
                 <div class="contact" data-id="id">
                     <span class="avatar small">&#9787;</span>
