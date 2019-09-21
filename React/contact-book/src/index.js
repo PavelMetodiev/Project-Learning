@@ -7,11 +7,13 @@ import contacts from './data/contacts.json';
 const htmlArray = []
 
 contacts.forEach((contact, index) => {
-    htmlArray.push(<div key={index} className="contact" data-id="id">
+    htmlArray.push(<div onClick={() => {currSelectedContIndex = index; render()}} key={index} className="contact" data-id="id">
         <span className="avatar small">&#9787;</span>
         <span className="title">{contact.firstName} {contact.lastName}</span>
     </div>)
 })
+
+let currSelectedContIndex = 0
 
 const Main = () => (
     <div className="container">
@@ -23,18 +25,43 @@ const Main = () => (
                     <Contacts />
                 </div>
             </div>
+            <Details index={currSelectedContIndex}/>
         </div>
     </div>
 )
-const Contacts = (props) => (
+const Contacts = () => (
     htmlArray
 )
 
+const Details = (props) => (
+    <div id="details">
+        <h1>Details</h1>
+        <div className="content">
+            <div className="info">
+                <div className="col">
+                    <span className="avatar">&#9787;</span>
+                </div>
+                <div className="col">
+                    <span className="name">{contacts[props.index].firstName}</span>
+                    <span className="name">{contacts[props.index].lastName}</span>
+                </div>
+            </div>
+            <div className="info">
+                <span className="info-line">&phone; {contacts[props.index].phone}</span>
+                <span className="info-line">&#9993; {contacts[props.index].email}</span>
+            </div>
+        </div>
+    </div>
+)
 
-ReactDOM.render(
+const render = () => ReactDOM.render(
     <Main />,
     document.getElementById('root')
 )
+
+render()
+
+
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 
