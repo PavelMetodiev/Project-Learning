@@ -5,14 +5,16 @@ import Counter from  './components/counter';
 
 let initialCount = 10;
 
-function getCounter() {
-    return <Counter initialCount={initialCount}/>;
-}
+function render() {
+    ReactDOM.render(
+        <Counter initialCount={initialCount}/>, 
+        document.getElementById('root')
+    );
+};
 
+setTimeout(() => {
+    initialCount = 20;
+    render()
+}, 2000);
 
-
-ReactDOM.render(
-    getCounter(), 
-    document.getElementById('root')
-);
-
+render();

@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
 
+const Incrementor = ({ increment }) => (
+    <button onClick={increment}>+</button>
+);
+
+const Decrementor = ({ decrement }) => (
+    <button onClick={decrement}>-</button>
+);
+
 class  Counter extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            count: props.initialCount
+            count: 0,
+            initialCount: 0,
         };
 
         this.increment = this.increment.bind(this);
         //this.decrement = this.decrement.bind(this);
-    };
+    }
 
     static getDerivedStateFromProps(props, state) {
-        return {}
+        if (state.count !== state.initialCount) {
+            return {
+                count: state.count
+            };
+        }
+        
+        return {
+            count: props.initialCount,
+            initialCount: props.initialCount
+        };
     }
 
     increment() {
@@ -43,8 +61,8 @@ class  Counter extends Component {
             <div>
                 <span>{count}</span>
                 <br />
-                <button onClick={this.increment}>+</button>
-                <button onClick={this.decrement}>-</button>
+                <Incrementor increment={this.increment}/>
+                <Decrementor decrement={this.decrement}/>
             </div>
         );
     };
@@ -56,4 +74,8 @@ class  Counter extends Component {
 
 }
 
+export {
+    Incrementor,
+    Decrementor,
+}
 export default Counter;
