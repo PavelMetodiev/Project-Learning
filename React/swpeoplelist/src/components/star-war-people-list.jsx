@@ -7,6 +7,17 @@ class StarWarsPeopleList extends React.Component {
         error: false,
     }; 
 
+    shouldComponentUpdate(nextProps, nextState ) {
+        const haveNextPropsChanged = (
+            JSON.stringify(nextProps) !== JSON.stringify(this.props) && 
+            Object.keys(nextProps).length !== Object.keys(this.props).length
+        );
+        
+        const hasNextStateChanged = JSON.stringify(nextState) !== JSON.stringify(this.props);
+        return (haveNextPropsChanged || hasNextStateChanged);
+    }
+    
+
     render() {
         const { people, isLoading, error } = this.state;
         
