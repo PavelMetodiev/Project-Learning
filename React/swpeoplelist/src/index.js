@@ -13,7 +13,7 @@ class App extends React.Component {
         isLoading: false,
     }
 
-    setNextPage = () => {
+    setNextPage = (event) => {
         this.setState((prevState) => ({
             page: prevState.page + 1,
         }));
