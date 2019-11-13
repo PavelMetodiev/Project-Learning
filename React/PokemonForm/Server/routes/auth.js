@@ -4,6 +4,7 @@ const validator = require('validator')
 
 const router = new express.Router()
 
+
 function validateSignupForm (payload) {
   const errors = {}
   let isFormValid = true
