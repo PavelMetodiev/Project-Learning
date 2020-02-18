@@ -27,7 +27,7 @@ const GoalInput = props => {
                         <Button title="Cancel" color="red" onPress={props.onCancel} />
                     </View>
                     <View style={styles.buttonStyle}>
-                        <Button title="Add" onPress={addGoalHandler} />
+                        <Button title="Add" color='green' onPress={addGoalHandler} />
                     </View>
                 </View>
             </View>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     buttonStyle: {
         borderColor: 'grey',
         borderWidth: 1,
-        borderRadius: 10,
+        borderRadius: 3,
         width: '38%',
     }
 
